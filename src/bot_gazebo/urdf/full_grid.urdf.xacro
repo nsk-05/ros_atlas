@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<robot name="grid_base" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+	<!-- Import summit XL wheels -->
+	<xacro:include filename="$(find bot_gazebo)/urdf/grid.urdf.xacro" />
+
+	<xacro:macro name="grid_full">
+		<xacro:grid_base/>
+  	</xacro:macro>
+
+   <xacro:grid_base/>
+
+</robot>
+

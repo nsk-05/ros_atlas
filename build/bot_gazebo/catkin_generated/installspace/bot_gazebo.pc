@@ -1,0 +1,8 @@
+prefix=/home/nsk/Desktop/project_1/install
+
+Name: bot_gazebo
+Description: Description of bot_gazebo
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
