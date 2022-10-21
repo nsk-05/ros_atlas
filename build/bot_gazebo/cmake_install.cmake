@@ -52,3 +52,15 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/bot_gazebo" TYPE FILE FILES "/home/nsk/Desktop/project_1/src/bot_gazebo/package.xml")
 endif()
 
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/bot_gazebo" TYPE DIRECTORY FILES "/home/nsk/Desktop/project_1/src/bot_gazebo/include/bot_gazebo/")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/bot_gazebo" TYPE DIRECTORY FILES
+    "/home/nsk/Desktop/project_1/src/bot_gazebo/launch"
+    "/home/nsk/Desktop/project_1/src/bot_gazebo/models"
+    "/home/nsk/Desktop/project_1/src/bot_gazebo/world"
+    )
+endif()
+

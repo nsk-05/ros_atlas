@@ -5,14 +5,14 @@
       <pose>0 0 0 0 -0 0</pose>
       <inertial>
         <pose>0 0 0.1 0 -0 0</pose>
-        <mass>100</mass>
+        <mass>10000</mass>
         <inertia>
-          <ixx>100</ixx>
+          <ixx>10000</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>100</iyy>
+          <iyy>10000</iyy>
           <iyz>0</iyz>
-          <izz>100</izz>
+          <izz>10000</izz>
         </inertia>
       </inertial>
       <self_collide>0</self_collide>
@@ -35,7 +35,7 @@
       <collision name='base_collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose>0 0 0.1 0 -0 0</pose>
+        <pose>0 0 0.2 0 -0 0</pose>
         <geometry>
           <mesh>
             <uri>/home/nsk/Desktop/project_1/src/bot_gazebo/mesh/grid.dae</uri>
