@@ -1,2 +1,0 @@
-bot_description:bot_gazebo
--DCATKIN_DEVEL_PREFIX=/home/nsk/Desktop/project_1/devel -DCMAKE_INSTALL_PREFIX=/home/nsk/Desktop/project_1/install -G Unix Makefiles
