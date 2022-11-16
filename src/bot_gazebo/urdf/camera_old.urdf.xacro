@@ -1,5 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
-<robot name="camera">
+<?xml version="1.0"?>
+<robot name="arena_cam" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="arena_cam">
+
+  <joint name="camera_joint" type="fixed">
+    <parent link="world"/>
+    <child link="camera_link"/>
+    <origin xyz="0 0 5" rpy="0 0 0"/>
+  </joint>
 
   <link name="camera_link">
     <inertial>
@@ -28,12 +36,6 @@
     </visual>
   </link>
 
-  <joint name="camera_joint" type="fixed">
-    <parent link="world"/>
-    <child link="camera_link"/>
-    <origin xyz="0 0 5" rpy="0 0 0"/>
-  </joint>
-
   <gazebo reference="camera_link">
     <sensor type="camera" name="camera_sensor">
       <update_rate>30.0</update_rate>
@@ -51,7 +53,7 @@
         </clip>
       </camera>
 
-      <plugin name="camera_camera_controller" filename="libgazebo_ros_camera.so">
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
         <alwaysOn>true</alwaysOn>
         <updateRate>0.0</updateRate>
         <cameraName>cam_sensor/camera</cameraName>
@@ -67,4 +69,6 @@
       </plugin>
     </sensor>
   </gazebo>
+  </xacro:macro>
+  <xacro:arena_cam/>
 </robot>
