@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"
+       name="apriltag_demo">
+
+  <xacro:include filename="$(find bot_description)/urdf/tags/apriltag_marker.xacro" />
+
+  <link name="world"/>
+  <xacro:apriltag_marker namespace="" name="apriltag0" parent="world" family="36_11" ID="0" size="0.5"> 
+    <origin xyz="0 0 1" rpy=" 0 0 0" />
+  </xacro:apriltag_marker>
+
+</robot>
