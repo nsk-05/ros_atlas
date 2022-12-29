@@ -2,6 +2,7 @@
 import rospy
 # ROS Image message
 from std_srvs.srv import Trigger,TriggerResponse
+from bot_vision.srv import mapSave,mapSaveRequest,mapSaveResponse
 from sensor_msgs.msg import Image
 # ROS Image message -> OpenCV2 image converter
 from cv_bridge import CvBridge, CvBridgeError
@@ -31,10 +32,11 @@ class Map_save():
         
     def map_service(self,req):
         os.chdir("maps")
-        gray=cv2.cvtColor(self.cv2_img,cv2.COLOR_BGR2GRAY)
-        cv2.imwrite('camera_image.pgm', gray)
-        res=TriggerResponse()
-        res.message="image saved"
+        img=cv2.cvtColor(self.cv2_img,cv2.COLOR_BGR2GRAY)
+        ret,gray=cv2.threshold(img,170,255,cv2.THRESH_BINARY)
+        map_file=f"{req.map_name}.pgm"
+        cv2.imwrite(map_file, gray)
+        res=mapSaveResponse()
         res.success=True
         return res
 
@@ -44,5 +46,5 @@ if __name__ == '__main__':
     MapSaver=Map_save()
     rospy.init_node('map_saver')
     rospy.Subscriber(MapSaver.image_topic, Image, MapSaver.image_callback)
-    rospy.Service("/map_save",Trigger,MapSaver.map_service)
+    rospy.Service("/map_save",mapSave,MapSaver.map_service)
     rospy.spin()
