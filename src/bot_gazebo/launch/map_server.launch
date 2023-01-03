@@ -1,0 +1,6 @@
+<launch>
+<arg name="map_file" default="/home/nsk/Desktop/project_1/maps/trial.yaml"/>/>
+<node pkg="map_server" type="map_server" name="map_serve" args="$(arg map_file)"/>
+<node pkg="tf" type="static_transform_publisher" name="link_map" args="0.0 0.0 1 0 0 0 world map 200" />
+<node pkg="robot_pose_publisher" type="robot_pose_publisher" name="robot_pose_publisher"/>
+</launch>
