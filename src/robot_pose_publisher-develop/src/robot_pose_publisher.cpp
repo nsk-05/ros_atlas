@@ -35,8 +35,8 @@ int main(int argc, char ** argv)
   ros::Publisher p_pub;
 
   nh_priv.param<std::string>("map_frame",map_frame,"/map");
-  nh_priv.param<std::string>("base_frame",base_frame,"/odom");
-  nh_priv.param<double>("publish_frequency",publish_frequency,10);
+  nh_priv.param<std::string>("base_frame",base_frame,"/base_link");
+  nh_priv.param<double>("publish_frequency",publish_frequency,100);
   nh_priv.param<bool>("is_stamped", is_stamped, false);
 
   if(is_stamped)
@@ -47,7 +47,6 @@ int main(int argc, char ** argv)
   // create the listener
   tf::TransformListener listener;
   listener.waitForTransform(map_frame, base_frame, ros::Time(), ros::Duration(1.0));
-
   ros::Rate rate(publish_frequency);
   while (nh.ok())
   {
@@ -55,7 +54,6 @@ int main(int argc, char ** argv)
     try
     {
       listener.lookupTransform(map_frame, base_frame, ros::Time(0), transform);
-
       // construct a pose message
       geometry_msgs::PoseStamped pose_stamped;
       pose_stamped.header.frame_id = map_frame;
