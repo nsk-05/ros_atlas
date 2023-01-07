@@ -1,5 +1,5 @@
 <launch>
-<arg name="map_file" default="/home/nsk/Desktop/project_1/maps/trial.yaml"/>/>
+<arg name="map_file" default="/home/nsk/Desktop/project_1/maps/new_map_trial.yaml"/>/>
 <node pkg="map_server" type="map_server" name="map_serve" args="$(arg map_file)"/>
 <node pkg="tf" type="static_transform_publisher" name="link_map" args="0 0 0 0 0 0 world map 200" />
 <node pkg="tf" type="static_transform_publisher" name="link_map_odom" args="0 0 0 0 0 0 map odom 20" />

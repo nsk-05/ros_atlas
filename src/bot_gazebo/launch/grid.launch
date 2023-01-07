@@ -27,7 +27,7 @@
 
   <!-- Spawning robot model and camera entity into the simualted grid world -->
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-    args="-urdf -x 8 -y 8 -z 0.3 -Y -1.57 -model mybot -param robot_description"/>
+    args="-urdf -x 8 -y 8 -z 0.6 -Y -1.57 -model mybot -param robot_description"/>
  
   <node name="camera_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
     args="-urdf -x 0.0 -y 0.0 -z 5.0  -model camera -param camera_description"/>

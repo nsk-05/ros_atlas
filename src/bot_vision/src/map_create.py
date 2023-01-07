@@ -36,11 +36,12 @@ class Map_save():
         ret,gray=cv2.threshold(img,170,255,cv2.THRESH_BINARY)
         map_file=f"{req.map_name}.pgm"
         cv2.imwrite(map_file, gray)
-        yaml = open(req.map_name, "w")
+        yaml_file_name=f"{req.map_name}.yaml"
+        yaml = open(yaml_file_name, "w")
         # Write some information into the file
-        yaml.write("image: " + os.getcwd() + "/maps/" + req.map_name + ".pgm\n")
-        yaml.write("resolution: 0.050000\n")
-        yaml.write("origin: [" + str(-1) + "," +  str(-1) + ", 0.000000]\n")
+        yaml.write("image: " + os.getcwd() + "/" + req.map_name + ".pgm\n")
+        yaml.write("resolution: 0.040000\n")
+        yaml.write("origin: [" + str(-10) + "," +  str(-10) + ", 0.000000]\n")
         yaml.write("negate: 0\noccupied_thresh: 0.65\nfree_thresh: 0.196")
         yaml.close()
         res=mapSaveResponse()
