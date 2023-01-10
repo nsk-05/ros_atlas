@@ -22,7 +22,7 @@
 standalone_tags:
   [
     #{id: ID, size: SIZE, name: NAME},
-    {id: 0, size: 0.5, name: 'Bot_0'}
+    {id: 0, size: 0.4, name: 'Bot_0'}
   ]
 # ## Tag bundle definitions
 # ### Remarks
