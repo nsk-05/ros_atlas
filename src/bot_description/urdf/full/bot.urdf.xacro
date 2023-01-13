@@ -38,7 +38,7 @@
    <xacro:include filename="$(find bot_description)/urdf/tags/apriltag_marker.xacro" />
 
    <xacro:apriltag_marker namespace="" name="apriltag0" parent="base_link" family="36h11" ID="0" size="0.5"> 
-    <origin xyz="0.1 0 0.65" rpy=" 0 0 0" />
+    <origin xyz="0.0 0 0.625" rpy=" 0 0 0" />
    </xacro:apriltag_marker>
    <xacro:robot/>
 
