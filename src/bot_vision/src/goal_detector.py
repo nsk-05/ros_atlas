@@ -17,7 +17,7 @@ class colour_goals():
         try:
             # Convert your ROS Image message to OpenCV2
             self.cv2_img = self.bridge.imgmsg_to_cv2(msg, "bgr8")
-            gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+            gray = cv2.cvtColor(self.cv2_img, cv2.COLOR_BGR2GRAY)
             blurred = cv2.GaussianBlur(gray, (5, 5), 0)
             _,thresh = cv2.threshold(blurred, 175, 255, cv2.THRESH_BINARY)
             cnts,_ = cv2.findContours(thresh.copy(), cv2.RETR_TREE,
@@ -37,15 +37,8 @@ class colour_goals():
                 if len(approx) == 4:
                     # compute the bounding box of the contour and use the
                     # bounding box to compute the aspect ratio
-                    # (x, y, w, h) = cv2.boundingRect(approx)
-                    # cX+=25
-                    
-                
-
-
-
-
-
+                    (x, y, w, h) = cv2.boundingRect(approx)
+                    cX+=25
         except CvBridgeError as e:
             print(e)
 if __name__ == '__main__':

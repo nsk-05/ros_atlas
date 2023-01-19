@@ -1,9 +1,9 @@
-red 5,-5
-yellow 5,0
-violet 5,5
-blue 0,-5
-cyan 0,0
-black 0,-5
-green -5,-5
-orange -5,0
-purple -5,5
+red 5 5
+yellow 5 0
+violet 5 -5
+blue 0 5
+cyan 0 0
+black 0 -5
+green -5 5
+orange -5 0
+purple -5 -5

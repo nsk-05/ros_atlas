@@ -62,6 +62,7 @@ find_package(catkin REQUIRED COMPONENTS
 add_service_files(DIRECTORY srv 
    FILES
     mapSave.srv
+    Goal_Service.srv
 )
 
 ## Generate actions in the 'action' folder

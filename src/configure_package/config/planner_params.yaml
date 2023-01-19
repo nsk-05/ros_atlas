@@ -6,7 +6,7 @@ planner_patience: 3
 controller_patience: 3
 recovery_behaviors:
   - {name: conservative_reset, type: clear_costmap_recovery/ClearCostmapRecovery}
-  - {name: step_back_recovery, type: step_back_recovery/StepBackRecovery }
+  # - {name: step_back_recovery, type: step_back_recovery/StepBackRecovery }
   - {name: aggressive_reset, type: clear_costmap_recovery/ClearCostmapRecovery}
 
 GlobalPlanner: 
