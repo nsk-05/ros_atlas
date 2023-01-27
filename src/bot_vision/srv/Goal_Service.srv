@@ -1,4 +1,4 @@
 int32 bot_id
 string goal
 ---
-int32 status
+bool status

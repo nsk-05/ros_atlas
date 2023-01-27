@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<robot name="package_red" xmlns:xacro="http://ros.org/wiki/xacro">
+  
+  <link name="package">
+    <inertial>
+      <mass value="0.02" />
+      <origin xyz="0 0 0" />
+      <inertia  ixx="1" ixy="0.004"  ixz="0.0"  iyy="1"  iyz="0.0"  izz="1" />
+    </inertial>
+
+    <visual>
+       <origin xyz="0 0 0" rpy="0 0 0" />
+       <geometry>
+	    <box size="0.05 0.05 0.05" />
+       </geometry>
+    </visual>
+
+    <collision>
+       <origin xyz="0 0 0" rpy="0 0 0" />
+       <geometry>
+        <box size="0.05 0.05 0.05" />
+       </geometry>
+    </collision>
+  </link>
+    <gazebo reference="package">
+        <material>Gazebo/Red</material>
+    </gazebo>
+</robot>

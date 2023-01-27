@@ -35,6 +35,7 @@ class goal_manager():
         rospy.loginfo(self.target_dict)
 
     def goal_cb(self,req):
+        
         id=(req.bot_id%4)
         if(id==0):
             x=self.target_dict[req.goal][0]+1+self.bot_size
@@ -67,8 +68,9 @@ class goal_manager():
                 print("i got an interrupt!!!......goal_aborted...")
             if (self.goal_state == 3):
                 print("destination reached!!!......goal_succed...")
-        rospy.loginfo("got result",self.goal_state)
-
+                return Goal_ServiceResponse(status=True)
+        # rospy.loginfo("got result",self.goal_state)
+        return Goal_ServiceResponse(status=False)
     # def send_goal(self,x, y, z, w):
     #     self.got_result = False
 
