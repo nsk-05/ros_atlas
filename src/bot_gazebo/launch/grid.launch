@@ -35,6 +35,11 @@
   <!-- <node name="apriltag_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
     args="-urdf -x 0 -y 0 -z 0.5 -R 0 -P 0 -Y 0 -model apriltag -param tag0_description" /> -->
 
+    <!-- load the controllers -->
+  <rosparam file="$(find bot_description)/config/joint_controller.yaml" command="load"/>
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" ns="/" args="platform1_position_controller joint_state_controller"/>
+    
   <!-- <include file="$(find bot_gazebo)/launch/st.launch"/> -->
   <!-- Launching rviz -->
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find bot_gazebo)/rviz/bot.rviz"/>
