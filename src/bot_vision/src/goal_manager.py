@@ -35,12 +35,16 @@ class goal_manager():
         rospy.loginfo(self.target_dict)
 
     def goal_cb(self,req):
-        
         id=(req.bot_id%4)
-        if(id==0):
-            x=self.target_dict[req.goal][0]+1+self.bot_size
-            y=self.target_dict[req.goal][1]
-            orientation=quaternion_from_euler(0,0,3.1417)
+        if(req.goal=="station_1"):
+            x=8.0
+            y=8.0
+            orientation=quaternion_from_euler(0,0,0)
+        else:
+            if(id==0):
+                x=self.target_dict[req.goal][0]+1+self.bot_size
+                y=self.target_dict[req.goal][1]
+                orientation=quaternion_from_euler(0,0,3.1417)
         rospy.loginfo(f"{str(x)} {str(y)}") #str(orientation[2]),str(orientation[3]) 
 
         # self.x = x

@@ -18,5 +18,5 @@ static:
     subscribe_to_updates: true
 
 inflation:
-    inflation_radius: 0.6
+    inflation_radius: 0.7
     cost_scaling_factor: 1.25

@@ -51,8 +51,8 @@ DWAPlannerROS:
   min_vel_theta: 0.23 #Do not reduce
 
   # Goal Tolerance Parameters
-  yaw_goal_tolerance: 0.13
-  xy_goal_tolerance: 0.2
+  yaw_goal_tolerance: 0.05
+  xy_goal_tolerance: 0.02
   latch_xy_goal_tolerance: true #try true for outdoor patrol robot
 
   # Forward Simulation Parameters
@@ -65,7 +65,7 @@ DWAPlannerROS:
   # Trajectory scoring parameters
   path_distance_bias: 0.05
   goal_distance_bias: 2 
-  occdist_scale: 2
+  occdist_scale: 0.05
   forward_point_distance: 0.5
   meter_scoring: false
 
