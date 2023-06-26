@@ -1,0 +1,4 @@
+int32 station_no
+string colour
+---
+bool status

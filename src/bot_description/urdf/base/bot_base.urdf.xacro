@@ -32,7 +32,7 @@
        <origin xyz="0 0.02 0" rpy="0 0 3.14" />
 
        <geometry>
-	     <mesh filename="package://bot_description/meshes/base/custom_base.dae"/>
+	     <mesh filename="package://bot_description/meshes/base/custom_base_scaled.dae"/>
        </geometry>
 
        <material name="darkgrey">
@@ -44,7 +44,7 @@
     <collision>
        <origin xyz="0 0.02 0" rpy="0 0 3.14" />
        <geometry>
-         <mesh filename="package://bot_description/meshes/base/custom_base.dae"/>
+         <mesh filename="package://bot_description/meshes/base/custom_base_scaled.dae"/>
        </geometry>
     </collision>
 

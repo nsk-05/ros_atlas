@@ -12,5 +12,11 @@
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
     args="-urdf -x 0 -y 0 -z 0  -model mybot -param robot_description"/>
 
+  
+  <!-- load the controllers -->
+  <rosparam file="$(find bot_description)/config/joint_controller.yaml" command="load"/>
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" ns="/" args="platform1_position_controller joint_state_controller"/>
+
 </launch>
 

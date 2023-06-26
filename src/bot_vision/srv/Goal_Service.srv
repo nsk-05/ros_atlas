@@ -1,0 +1,4 @@
+int32 bot_id
+string goal
+---
+bool status

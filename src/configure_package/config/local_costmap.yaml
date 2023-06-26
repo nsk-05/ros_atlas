@@ -1,0 +1,22 @@
+global_frame: odom
+rolling_window: true
+width: 15.0
+height: 15.0
+origin_x: 0
+origin_y: 0
+publish_frequency: 5.0
+update_frequency: 5.0
+
+plugins:
+  - {name: static,                  type: "costmap_2d::StaticLayer"}
+  - {name: inflation,           type: "costmap_2d::InflationLayer"}
+
+
+#layer definitions
+static:
+    map_topic: /map
+    subscribe_to_updates: true
+
+inflation:
+    inflation_radius: 0.7
+    cost_scaling_factor: 1.25
