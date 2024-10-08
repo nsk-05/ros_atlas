@@ -4,6 +4,9 @@
 # ignore devel folder
 /devel
 
+# ignore log
+/log
+
 # ignoring .vscode file
 *.vscode
 

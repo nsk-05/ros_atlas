@@ -39,3 +39,7 @@ Ensure you have the following installed on your system:
     rosrun bot_package_manager package_spawner.py
    ```
 
+
+## Multi-agent conflict based search(MACBS) visualisation
+
+![Robot in action](./assets/MACBS.gif)
